@@ -23,8 +23,7 @@ Este é um projeto simples de sistema de avaliação escolar feito com Flask e P
 3. Instale as dependências:
    ```pip install -r requirements.txt```
 4. Configure o banco de dados PostgreSQL:
-   ```Crie um arquivo .env para armazenar a url do banco de dados ==>
-   DATABASE_URL="sua_url"```
+   ```Crie um arquivo .env para armazenar a url do banco de dados ==> DATABASE_URL="sua_url"```
 6. Execute o Flask:
 
 ## Estrutura do Projeto
