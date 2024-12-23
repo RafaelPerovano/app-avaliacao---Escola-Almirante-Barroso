@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação - Sistema de Avaliação</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f0f0;
+        }
+        .evaluation-container {
+            margin-top: 10vh;
+        }
+        .logo {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        .btn-emogi {
+            width: 100px;
+            height: 100px;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center evaluation-container">
+        <div class="col-md-6 col-lg-4 bg-white p-5 rounded shadow">
+            <div class="text-center">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" class="logo">
+                <h3 class="mb-3">Avaliação - Sistema de Avaliação</h3>
+                <p class="text-muted">Por favor, selecione sua satisfação e forneça comentários (opcional).</p>
+            </div>
+
+            <form method="POST" action="/avaliacao">
+                <div class="mb-4 text-center">
+                    <label class="form-label">Satisfação:</label>
+                    <div>
+                        <input type="radio" name="emogi" value="0" id="emoji0"> 😡
+                        <input type="radio" name="emogi" value="1" id="emoji1"> 😟
+                        <input type="radio" name="emogi" value="2" id="emoji2"> 😐
+                        <input type="radio" name="emogi" value="3" id="emoji3"> 🙂 
+                        <input type="radio" name="emogi" value="4" id="emoji4"> 😀 
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="comentarios" class="form-label">Comentários (opcional):</label>
+                    <textarea class="form-control" id="comentarios" name="comentarios" rows="4"></textarea>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary w-100">Enviar Avaliação</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const emogiButtons = document.querySelectorAll('.btn-emogi');
+        emogiButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                emogiButtons.forEach(btn => btn.classList.remove('btn-primary'));
+                this.classList.add('btn-primary');
+                document.querySelector('input[name="emogi"]').value = this.value;
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+data (falta saber a que nivel de precisão)*
+turno
+como pegar as informações de todos os usuarios?
+uma pessoa pode fazer varias avaliações no mesmo dia?
+botar como padrao a ultima avaliação ser vazia no banco de dados
+tratar dados no front end, js fazendo as mensagens de erro ou sucesso aparecer
+implementação de tempo de vida
